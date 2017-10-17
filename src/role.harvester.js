@@ -36,14 +36,14 @@ var roleHarvester = {
             }
         }
 
-        if (creep.memory.refilling && creep.carry.energy == 0) {
+        if (creep.carry.energy == 0) {
             creep.memory.refilling = true;
         }
-        if (!creep.memory.refilling && creep.carry.energy == creep.carryCapacity) {
+        if (creep.carry.energy == creep.carryCapacity) {
             creep.memory.refilling = false;
         }
 
-	    if ((creep.carry.energy < creep.carryCapacity) && creep.memory.refilling){
+        if ((creep.carry.energy < creep.carryCapacity) && creep.memory.refilling){
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
                 console.log(creep.name + ' moving to source');
@@ -68,7 +68,7 @@ var roleHarvester = {
                 }
             }
         }
-	}
+    }
 };
 
 module.exports = roleHarvester;

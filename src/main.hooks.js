@@ -21,7 +21,7 @@ module.exports  = {
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
         console.log('Harvesters: ' + harvesters.length);
         
-        if(harvesters.length < 1) {
+        if(harvesters.length < 2) {
             var newName = 'Harvester' + Game.time;
             var creepCreated = spawn.spawnCreep([WORK,CARRY,MOVE], newName, {memory: {role: 'harvester'}});
             if (creepCreated == ERR_NOT_ENOUGH_ENERGY) {
@@ -60,7 +60,7 @@ module.exports  = {
         if(spawn.spawning) { 
             var spawningCreep = Game.creeps[spawn.spawning.name];
             spawn.room.visual.text(
-                '🛠️' + spawningCreep.memory.role,
+                'ð ï¸' + spawningCreep.memory.role,
                 spawn.pos.x + 1, 
                 spawn.pos.y, 
                 {align: 'left', opacity: 0.8});
