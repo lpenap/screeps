@@ -23,6 +23,9 @@ module.exports.loop = function () {
     
     mainHooks.cleanMemory();
     mainHooks.spawnCreeps();
+    
+    console.log('tickLimit: '+ Game.cpu.tickLimit);
+    console.log('cpu limit: '+ Game.cpu.limit );
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];

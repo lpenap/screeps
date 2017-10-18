@@ -11,17 +11,14 @@ var roleBuilder = {
 	    }
 
 	    if(creep.memory.building) {
-	        var structures = creep.room.find(FIND_MY_STRUCTURES);
-	        var targets = [];
+	        var repairThreshold = 0.8;
 	        var repairNeeded = false;
-	        for (var structure in structures) {
-	            if (structure.hits < structure.hitsMax) {
-	                creep.say('repair');
-	                targets.push(structure);
-	                repairNeeded = true;
-	                break;
-	            }
+	        var structures = creep.room.find(FIND_STRUCTURES, {filter: (s) => ((s.hits / s.hitsMax)<repairThreshold)});
+	        var targets = _.sortBy(structures, 'hits')
+	        if (targets.length > 0) {
+	            var repairNeeded = true;
 	        }
+	        console.log('targets to repair: '+targets.length);
 	        if (!repairNeeded) {
 	            targets = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
 	        }

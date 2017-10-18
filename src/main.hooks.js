@@ -34,7 +34,7 @@ module.exports  = {
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
         console.log('Builders: ' + builders.length);
         
-        if(builders.length < 3) {
+        if(builders.length < 4) {
             var newName = 'Builder' + Game.time;
             var creepCreated = spawn.spawnCreep([WORK,CARRY,MOVE], newName, {memory: {role: 'builder'}});
             if (creepCreated == ERR_NOT_ENOUGH_ENERGY) {
@@ -60,7 +60,7 @@ module.exports  = {
         if(spawn.spawning) { 
             var spawningCreep = Game.creeps[spawn.spawning.name];
             spawn.room.visual.text(
-                'ð ï¸' + spawningCreep.memory.role,
+                'Ã°ÂÂÂ Ã¯Â¸Â' + spawningCreep.memory.role,
                 spawn.pos.x + 1, 
                 spawn.pos.y, 
                 {align: 'left', opacity: 0.8});
