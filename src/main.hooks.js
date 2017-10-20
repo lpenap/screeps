@@ -60,7 +60,7 @@ module.exports = {
         if (spawn.spawning) {
             var spawningCreep = Game.creeps[spawn.spawning.name];
             spawn.room.visual.text(
-                'Ã°ÂÂÂ Ã¯Â¸Â' + spawningCreep.memory.role,
+                '' + spawningCreep.memory.role,
                 spawn.pos.x + 1,
                 spawn.pos.y, { align: 'left', opacity: 0.8 });
         }

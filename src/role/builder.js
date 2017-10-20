@@ -11,7 +11,7 @@ var roleBuilder = {
         }
 
         if (creep.memory.building) {
-            var repairThreshold = 0.7;
+            var repairThreshold = 0.6;
             var buildNeeded = false;
 
             var closestTarget = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
