@@ -1,2 +1,5 @@
 screeps.sublime-workspace
-ScreepsAutocomplete-master/
+ScreepsAutocomplete/
+node_modules/
+.screeps.json
+dist/
