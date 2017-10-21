@@ -5,13 +5,13 @@ var mainHooks = require('main.hooks');
 require('version')
 
 module.exports.loop = function() {
-
     var tower = Game.getObjectById('59e958b99ebea034ce082963');
     if (tower) {
         var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-            filter: (structure) => structure.hits < structure.hitsMax
+            filter: (structure) => (structure.hits / structure.hitsMax) < 0.6
         });
         if (closestDamagedStructure && ((tower.energy / tower.energyCapacity) > 0.5)) {
+            console.log('Tower to repair ' + closestDamagedStructure.structureType);
             tower.repair(closestDamagedStructure);
         }
 
