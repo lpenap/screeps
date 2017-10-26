@@ -1,2 +1,3 @@
 global.CREEPER_COUNT = 9;
 global.TICKS_PER_SUMMARY = 10;
+global.MEMORY_CLEAN_INTERVAL = 10;

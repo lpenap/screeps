@@ -1,9 +1,19 @@
-var roleHarvester = require('role_harvester');
-var roleUpgrader = require('role_upgrader');
-var roleBuilder = require('role_builder');
-var mainHooks = require('main.hooks');
-require('version')
+"use strict"
 
+const Kernel = require('system_kernel');
+const Logger = require('lib_logger');
+require('version')
+require('constants');
+
+global.logger = new Logger();
+
+module.exports.loop = function() {
+    const kernel = new Kernel();
+    kernel.init();
+    kernel.run();
+    kernel.cleanup();
+}
+/**
 module.exports.loop = function() {
     var tower = Game.getObjectById('59e958b99ebea034ce082963');
     if (tower) {
@@ -44,3 +54,4 @@ module.exports.loop = function() {
         }
     }
 }
+**/
